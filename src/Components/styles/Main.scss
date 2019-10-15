@@ -1,0 +1,27 @@
+* {
+  //   set font-size to 10px so rem is easy to calc.
+  font-size: 10px;
+}
+
+body {
+  font-family: "Kalam", cursive;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+}
+
+.fun-img {
+  height: 40rem;
+  width: 40rem;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+//TopicSelect Specific Component
+
+.select-container {
+  display: grid;
+}
