@@ -1,6 +1,6 @@
 * {
   //   set font-size to 10px so rem is easy to calc.
-  font-size: 10px;
+  font-size: 20px;
 }
 
 body {
@@ -58,4 +58,18 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.Card-question {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h3 {
+    color: red;
+  }
+}
+
+//Styling Sweetalert2
+.swal2-popup {
+  color: pink;
+  font-size: 30px;
 }
