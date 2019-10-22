@@ -30,7 +30,7 @@ function Card(props) {
   };
   let topicQuestions = async () => {
     let result = await axios.get(
-      `https://opentdb.com/api.php?amount=10&category=${topic}`
+      `https://opentdb.com/api.php?amount=10&category=${topic}&encode=url3986`
     );
     setQuestions(result.data.results);
     // if (topic !== "") {
@@ -56,7 +56,8 @@ function Card(props) {
       {questions.map((elm, index) => {
         return (
           <div key={index}>
-            <h2>{elm.question}</h2>
+            {/* Using decodeURIComponent to decode questions that are return with URL Encoding (RFC 3986) */}
+            <h2>{decodeURIComponent(elm.question)}</h2>
           </div>
         );
       })}
