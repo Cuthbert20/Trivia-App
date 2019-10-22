@@ -13,6 +13,12 @@ h1 {
   letter-spacing: 0.2rem;
 }
 
+.App-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .fun-img {
   height: 40rem;
   width: 40rem;
@@ -22,6 +28,9 @@ h1 {
 
 //TopicSelect Specific Component
 
-.select-container {
-  display: grid;
+.TopicSelect-Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

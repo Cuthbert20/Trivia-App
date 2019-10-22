@@ -4,7 +4,7 @@ import TopicSelect from "./Components/TopicSelect";
 
 function App() {
   return (
-    <div className="">
+    <div className="App-Container">
       <h1>It's That Time Again, are You Ready to Play?!?!</h1>
       {/* PlayTime Component use hooks with button if yes turn background color to Crimson */}
       <TopicSelect />
