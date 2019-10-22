@@ -9,6 +9,7 @@ function TopicSelect() {
   const props = useSpring({ opacity: 1, from: { opacity: 0 } });
   const [category, setCategory] = useState([]);
   const [topic, setTopic] = useState("");
+  // const [topicId, setTopicId] = useState("");
   useEffect(() => {
     topics();
   }, []);
@@ -31,7 +32,7 @@ function TopicSelect() {
         <option value="Select a Topic">Select a Topic</option>
         {category.map((elm, index) => {
           return (
-            <option value={elm.name} key={elm.id}>
+            <option value={elm.id} key={elm.id}>
               {elm.name}
             </option>
           );
