@@ -11,23 +11,26 @@ h1 {
   font-size: 3rem;
   font-weight: 700;
   letter-spacing: 0.2rem;
+  margin: 0;
 }
 h2 {
   font-size: 2.5rem;
   font-weight: 500;
   letter-spacing: 0.1rem;
+  margin: 0.5rem 0;
 }
 #Card-category {
   color: rgb(29, 93, 29);
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   letter-spacing: 0.2rem;
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 400;
   letter-spacing: 0.1rem;
+  margin: 0;
 }
 
 .App-Container {
@@ -52,6 +55,12 @@ h3 {
   align-items: center;
 }
 
+.TopicSelect-spring-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 //Card Component Styles
 .Card-Container {
   display: flex;
@@ -64,8 +73,12 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  h3 {
+  span {
     color: red;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    text-transform: capitalize;
   }
 }
 
@@ -73,4 +86,9 @@ h3 {
 .swal2-popup {
   color: pink;
   font-size: 30px;
+}
+
+//Answer Component
+.Answer-list {
+  list-style: none;
 }

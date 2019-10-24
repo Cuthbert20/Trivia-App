@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./styles/Main.scss";
 import axios from "axios";
 import Swal from "sweetalert2";
+import Answer from "./Answer";
 
 function Card(props) {
   const [category, setCategory] = useState("");
@@ -85,13 +86,10 @@ function Card(props) {
           <div className="Card-question" key={index}>
             {/* Using decodeURIComponent to decode questions that are return with URL Encoding (RFC 3986) */}
             <h2>{decodeURIComponent(elm.question)}</h2>
-            <p>Select an answer</p>
-            <ul>
-              {answers.map((elm, index) => {
-                return <li>{decodeURIComponent(elm)}</li>;
-              })}
-            </ul>
-            <h3>{elm.difficulty}</h3>
+            <h3>
+              Difficulty Level: <span>{elm.difficulty}</span>
+            </h3>
+            <Answer answers={answers} />
             <button
               value={decodeURIComponent(elm.correct_answer)}
               onClick={e => handleAnswer(e)}

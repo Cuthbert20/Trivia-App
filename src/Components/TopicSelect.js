@@ -38,8 +38,8 @@ function TopicSelect() {
           );
         })}
       </select>
-      <animated.div style={props}>
-        <p>I will fade in using react-spring</p>
+      <animated.div className="TopicSelect-spring-div" style={props}>
+        <p>This div will fade in using react-spring</p>
         <img className="fun-img" src={pugSwing} alt="Pug in a Swing Smiling" />
       </animated.div>
       <Card topic={topic} />
