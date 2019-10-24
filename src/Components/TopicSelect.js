@@ -6,7 +6,20 @@ import axios from "axios";
 import Card from "./Card";
 
 function TopicSelect() {
-  const props = useSpring({ opacity: 1, from: { opacity: 0 } });
+  //just testing out react-sping api hooks useSpring on variable & animated on the element
+  const animation = useSpring({
+    from: { opacity: 0, color: "red" },
+    to: [
+      { opacity: 1, color: "#ffaaee" },
+      { opacity: 1, color: "red" },
+      { opacity: 0.5, color: "#008000" },
+      { opacity: 0.8, color: "black" }
+    ]
+  });
+  const imgAnimation = useSpring({
+    from: { opacity: 0 },
+    to: [{ opacity: 0.2 }, { opacity: 0.5 }, { opacity: 0.8 }, { opacity: 1 }]
+  });
   const [category, setCategory] = useState([]);
   const [topic, setTopic] = useState("");
   // const [topicId, setTopicId] = useState("");
@@ -38,10 +51,17 @@ function TopicSelect() {
           );
         })}
       </select>
-      <animated.div className="TopicSelect-spring-div" style={props}>
-        <p>This div will fade in using react-spring</p>
-        <img className="fun-img" src={pugSwing} alt="Pug in a Swing Smiling" />
-      </animated.div>
+      <div className="TopicSelect-spring-div">
+        <animated.p style={animation}>
+          This element will fade in and change colors
+        </animated.p>
+        <animated.img
+          style={imgAnimation}
+          className="fun-img"
+          src={pugSwing}
+          alt="Pug in a Swing Smiling"
+        />
+      </div>
       <Card topic={topic} />
     </div>
   );

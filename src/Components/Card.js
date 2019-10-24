@@ -7,18 +7,13 @@ import Answer from "./Answer";
 function Card(props) {
   const [category, setCategory] = useState("");
   const [questions, setQuestions] = useState([]);
-  //state hook for modal initialState false
-  const [show, setShow] = useState(false);
+  //hook for mapped value elm.difficulty level color, hard ? {color: red} : {color: black}
   const { topic } = props;
   //   console.log(topic);
   useEffect(() => {
     selectCategory();
   });
-  //   useEffect(() => {
-  //     if (topic !== "") {
-  //       topicQuestions();
-  //     }
-  //   }, []);
+
   let selectCategory = () => {
     axios
       .get(
@@ -38,16 +33,7 @@ function Card(props) {
       `https://opentdb.com/api.php?amount=1&category=${topic}&type=multiple&encode=url3986`
     );
     setQuestions(result.data.results);
-    // if (topic !== "") {
-    //   setQuestions(result.data.results);
-    // }
   };
-  //   let showModal = () => {
-  //     setShow(!show);
-  //   };
-  //   let hideModal = () => {
-  //     setShow(false);
-  //   };
   let handleAnswer = val => {
     Swal.fire({
       title: "Answer",
@@ -65,7 +51,6 @@ function Card(props) {
   // console.log(questions);
   return (
     <div className="Card-Container">
-      {/* <h2>{props.topic}</h2> */}
       <h3
         style={
           props.topic === ""
@@ -87,7 +72,18 @@ function Card(props) {
             {/* Using decodeURIComponent to decode questions that are return with URL Encoding (RFC 3986) */}
             <h2>{decodeURIComponent(elm.question)}</h2>
             <h3>
-              Difficulty Level: <span>{elm.difficulty}</span>
+              Difficulty Level:{" "}
+              <span
+                className={
+                  elm.difficulty === "easy"
+                    ? "easy"
+                    : elm.difficulty === "medium"
+                    ? "medium"
+                    : "hard"
+                }
+              >
+                {elm.difficulty}
+              </span>
             </h3>
             <Answer answers={answers} />
             <button
