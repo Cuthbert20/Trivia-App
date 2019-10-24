@@ -1,6 +1,6 @@
 * {
   //   set font-size to 10px so rem is easy to calc.
-  font-size: 20px;
+  font-size: 15px;
 }
 
 body {
@@ -37,8 +37,8 @@ h3 {
 }
 
 .fun-img {
-  height: 40rem;
-  width: 40rem;
+  height: 10rem;
+  width: 10rem;
   object-fit: cover;
   border-radius: 5px;
 }
@@ -58,6 +58,7 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 .Card-question {
   display: flex;

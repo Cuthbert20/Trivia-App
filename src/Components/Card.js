@@ -24,7 +24,7 @@ function Card(props) {
         `https://opentdb.com/api.php?amount=10&category=${topic}` //&type=boolean
       )
       .then(res => {
-        console.log(res.data.results);
+        // console.log(res.data.results);
         //using if statement so category will not display until a topic has been selected
         if (props.topic !== "") {
           setCategory(res.data.results[0].category);
@@ -55,12 +55,16 @@ function Card(props) {
       customClass: "swal2-popup"
     });
   };
-  console.log(category);
-  console.log(questions);
+  //creating a function that will shuffle the answer array so that the answer is not always the last value since
+  //we are pushing the answer on to the end of the incorrect_answers see variable answers below
+  function shuffle(arr) {
+    arr.sort(() => Math.random() - 0.5);
+  }
+  // console.log(category);
+  // console.log(questions);
   return (
     <div className="Card-Container">
-      <h1>Card Component</h1>
-      <h2>{props.topic}</h2>
+      {/* <h2>{props.topic}</h2> */}
       <h3
         style={
           props.topic === ""
@@ -73,10 +77,20 @@ function Card(props) {
       <button onClick={() => topicQuestions()}>Questions!!</button>
       {questions.map((elm, index) => {
         console.log(elm);
+        let answers = elm.incorrect_answers;
+        answers.push(elm.correct_answer);
+        shuffle(answers);
+        // console.log(answers);
         return (
           <div className="Card-question" key={index}>
             {/* Using decodeURIComponent to decode questions that are return with URL Encoding (RFC 3986) */}
             <h2>{decodeURIComponent(elm.question)}</h2>
+            <p>Select an answer</p>
+            <ul>
+              {answers.map((elm, index) => {
+                return <li>{decodeURIComponent(elm)}</li>;
+              })}
+            </ul>
             <h3>{elm.difficulty}</h3>
             <button
               value={decodeURIComponent(elm.correct_answer)}
