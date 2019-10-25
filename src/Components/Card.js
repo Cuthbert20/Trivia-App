@@ -67,6 +67,7 @@ function Card(props) {
         answers.push(elm.correct_answer);
         shuffle(answers);
         // console.log(answers);
+        const rightAnswer = decodeURIComponent(elm.correct_answer);
         return (
           <div className="Card-question" key={index}>
             {/* Using decodeURIComponent to decode questions that are return with URL Encoding (RFC 3986) */}
@@ -85,7 +86,7 @@ function Card(props) {
                 {elm.difficulty}
               </span>
             </h3>
-            <Answer answers={answers} />
+            <Answer answers={answers} rightAnswer={rightAnswer} />
             <button
               value={decodeURIComponent(elm.correct_answer)}
               onClick={e => handleAnswer(e)}
