@@ -41,11 +41,15 @@ function TopicSelect() {
   return (
     <div className="TopicSelect-Container">
       <h1>Select Your Topic</h1>
-      <select value={topic} onChange={e => handleSelect(e)}>
+      <select
+        id="TopicSelect-dropdown"
+        value={topic}
+        onChange={e => handleSelect(e)}
+      >
         <option value="Select a Topic">Select a Topic</option>
         {category.map((elm, index) => {
           return (
-            <option value={elm.id} key={elm.id}>
+            <option className="TopicSelect-options" value={elm.id} key={elm.id}>
               {elm.name}
             </option>
           );

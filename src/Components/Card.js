@@ -60,7 +60,9 @@ function Card(props) {
       >
         You Have Selected <span id="Card-category"> {category}</span>
       </h3>
-      <button onClick={() => topicQuestions()}>Questions!!</button>
+      <button id="Card-q-btn" onClick={() => topicQuestions()}>
+        Questions!!
+      </button>
       {questions.map((elm, index) => {
         console.log(elm);
         let answers = elm.incorrect_answers;
@@ -87,12 +89,12 @@ function Card(props) {
               </span>
             </h3>
             <Answer answers={answers} rightAnswer={rightAnswer} />
-            <button
+            {/* <button
               value={decodeURIComponent(elm.correct_answer)}
               onClick={e => handleAnswer(e)}
             >
               See Answer
-            </button>
+            </button> */}
           </div>
         );
       })}

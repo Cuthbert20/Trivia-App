@@ -19,7 +19,11 @@ function Answer(props) {
         return (
           <div className="Answer-list" key={index}>
             {/* <li>{decodeURIComponent(elm)}</li> */}
-            <button value={values} onClick={() => handleClick(values)}>
+            <button
+              className="Answer-btn"
+              value={values}
+              onClick={() => handleClick(values)}
+            >
               {decodeURIComponent(elm)}
             </button>
           </div>
