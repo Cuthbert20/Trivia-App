@@ -61,7 +61,7 @@ function Card(props) {
         You Have Selected <span id="Card-category"> {category}</span>
       </h3>
       <button id="Card-q-btn" onClick={() => topicQuestions()}>
-        Questions!!
+        New Question
       </button>
       {questions.map((elm, index) => {
         console.log(elm);

@@ -1,11 +1,16 @@
-* {
+*,
+*::after,
+*::before {
   //   set font-size to 10px so rem is easy to calc.
   font-size: 15px;
+  // setting box-sizing to inherit so that it will inherit what we set box-sizing to on body, ie border-box
+  box-sizing: inherit;
 }
 
 body {
   font-family: "Kalam", cursive;
   background-color: rgba(10, 30, 34, 0.39);
+  box-sizing: border-box;
 }
 
 h1 {
@@ -45,6 +50,9 @@ h3 {
   width: 10rem;
   object-fit: cover;
   border-radius: 5px;
+}
+#App-title {
+  animation: moveInLeft 1.5s ease-in-out;
 }
 
 //TopicSelect Component Styles
@@ -132,5 +140,20 @@ h3 {
   &:hover {
     background: rgba(80, 196, 231, 0.952);
     padding: 10px;
+  }
+}
+// Creating animation with keyframes, will replace with react-spring
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  //we want the element to shoot past the end point before coming back to end position
+  80% {
+    transform: translateX(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
