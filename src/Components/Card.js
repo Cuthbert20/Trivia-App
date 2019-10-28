@@ -88,7 +88,12 @@ function Card(props) {
                 {elm.difficulty}
               </span>
             </h3>
-            <Answer answers={answers} rightAnswer={rightAnswer} />
+            <Answer
+              topic={topic}
+              getQuestions={setQuestions}
+              answers={answers}
+              rightAnswer={rightAnswer}
+            />
             {/* <button
               value={decodeURIComponent(elm.correct_answer)}
               onClick={e => handleAnswer(e)}
