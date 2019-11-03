@@ -7,8 +7,9 @@ function Answer(props) {
   const { rightAnswer, answers, topic } = props;
   let topicQuestions = async () => {
     let result = await axios.get(
+      //https://opentdb.com/api.php?amount=1&category=23&encode=url3986
       //when fetching data from Trivia API we are get topic from props.topic, multiple choice & encoded with url3986
-      `https://opentdb.com/api.php?amount=1&category=${topic}&type=multiple&encode=url3986`
+      `https://opentdb.com/api.php?amount=1&category=${topic}&encode=url3986`
     );
     props.getQuestions(result.data.results);
   };

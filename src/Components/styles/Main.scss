@@ -137,9 +137,10 @@ h3 {
   background: #fff;
   padding: 5px;
   margin: 10px 0;
+  outline: none;
   &:hover {
     background: rgba(80, 196, 231, 0.952);
-    padding: 10px;
+    // padding: 10px;
   }
 }
 // Creating animation with keyframes, will replace with react-spring
