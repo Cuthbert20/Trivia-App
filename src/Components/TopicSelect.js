@@ -22,6 +22,7 @@ function TopicSelect() {
   });
   const [category, setCategory] = useState([]);
   const [topic, setTopic] = useState("");
+  const [diff, setDiff] = useState("");
   // const [topicId, setTopicId] = useState("");
   useEffect(() => {
     topics();
@@ -36,6 +37,10 @@ function TopicSelect() {
   let handleSelect = res => {
     // console.log(res.target.value);
     setTopic(res.target.value);
+  };
+  //setting difficulty level using diff and setDiff
+  let handleDiff = res => {
+    setDiff(res.target.value);
   };
   // console.log(topic);
   return (
@@ -54,6 +59,12 @@ function TopicSelect() {
             </option>
           );
         })}
+      </select>
+      <select value={diff} id="TopicSelect-dropdown">
+        <option value="Select a Difficulty">Select a Difficulty</option>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
       </select>
       <div className="TopicSelect-spring-div">
         <animated.p style={animation}>

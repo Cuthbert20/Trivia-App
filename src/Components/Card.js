@@ -13,7 +13,6 @@ function Card(props) {
   useEffect(() => {
     selectCategory();
   });
-
   let selectCategory = () => {
     axios
       .get(
