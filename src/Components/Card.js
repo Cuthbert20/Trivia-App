@@ -8,7 +8,8 @@ function Card(props) {
   const [category, setCategory] = useState("");
   const [questions, setQuestions] = useState([]);
   //hook for mapped value elm.difficulty level color, hard ? {color: red} : {color: black}
-  const { topic } = props;
+  const { topic, diff } = props;
+  console.log(props);
   //   console.log(topic);
   useEffect(() => {
     selectCategory();
@@ -21,7 +22,8 @@ function Card(props) {
       .then(res => {
         // console.log(res.data.results);
         //using if statement so category will not display until a topic has been selected
-        if (props.topic !== "") {
+        //?NOTE when I added && props.topic !== "Select a Topic" and I console.log(props) it runs three times?????
+        if (props.topic !== "" && props.topic !== "Select a Topic") {
           setCategory(res.data.results[0].category);
         }
       });

@@ -42,7 +42,7 @@ function TopicSelect() {
   let handleDiff = res => {
     setDiff(res.target.value);
   };
-  // console.log(topic);
+  console.log(diff);
   return (
     <div className="TopicSelect-Container">
       <h1>Select Your Topic</h1>
@@ -60,8 +60,12 @@ function TopicSelect() {
           );
         })}
       </select>
-      <select value={diff} id="TopicSelect-dropdown">
-        <option value="Select a Difficulty">Select a Difficulty</option>
+      <select
+        value={diff}
+        id="TopicSelect-dropdown"
+        onChange={e => handleDiff(e)}
+      >
+        <option>Select a Difficulty</option>
         <option value="easy">Easy</option>
         <option value="medium">Medium</option>
         <option value="hard">Hard</option>
@@ -77,7 +81,7 @@ function TopicSelect() {
           alt="Pug in a Swing Smiling"
         />
       </div>
-      <Card topic={topic} />
+      <Card topic={topic} diff={diff} />
     </div>
   );
 }
