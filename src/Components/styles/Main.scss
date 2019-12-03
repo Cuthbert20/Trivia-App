@@ -43,6 +43,7 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 }
 
 .fun-img {
@@ -56,7 +57,9 @@ h3 {
 }
 
 //TopicSelect Component Styles
-
+#TopicSelect-Title {
+  animation: moveInRight 1.5s ease-in-out;
+}
 .TopicSelect-Container {
   display: flex;
   flex-direction: column;
@@ -153,6 +156,19 @@ h3 {
   //we want the element to shoot past the end point before coming back to end position
   80% {
     transform: translateX(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-2rem);
   }
   100% {
     opacity: 1;

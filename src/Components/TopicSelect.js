@@ -45,7 +45,7 @@ function TopicSelect() {
   console.log(diff);
   return (
     <div className="TopicSelect-Container">
-      <h1>Select Your Topic</h1>
+      <h1 id="TopicSelect-Title">Select Your Topic</h1>
       <select
         id="TopicSelect-dropdown"
         value={topic}
