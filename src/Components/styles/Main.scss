@@ -1,3 +1,5 @@
+$base-color: rgba(10, 30, 34, 0.39);
+
 *,
 *::after,
 *::before {
@@ -9,7 +11,7 @@
 
 body {
   font-family: "Kalam", cursive;
-  background-color: rgba(10, 30, 34, 0.39);
+  background-color: $base-color;
   box-sizing: border-box;
 }
 
@@ -98,6 +100,9 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 4px 8px 0;
+  border-radius: 5px;
+  background: lighten($base-color, 50%);
   span {
     // color: red;
     font-size: 1.5rem;
