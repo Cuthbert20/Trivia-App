@@ -26,7 +26,7 @@ function TopicSelect() {
   // const [topicId, setTopicId] = useState("");
   useEffect(() => {
     topics();
-  }, []);
+  }, [topic]);
   let topics = () => {
     axios.get(`https://opentdb.com/api_category.php`).then(res => {
       //setting category to the value of the returned promise from the data we fetched from the trivia api

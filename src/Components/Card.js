@@ -8,7 +8,7 @@ function Card(props) {
   const [category, setCategory] = useState("");
   const [questions, setQuestions] = useState([]);
   //hook for mapped value elm.difficulty level color, hard ? {color: red} : {color: black}
-  const { topic, diff } = props;
+  const { topic } = props;
   console.log(props);
   //   console.log(topic);
   useEffect(() => {
@@ -46,7 +46,22 @@ function Card(props) {
   //creating a function that will shuffle the answer array so that the answer is not always the last value since
   //we are pushing the answer on to the end of the incorrect_answers see variable answers below
   function shuffle(arr) {
-    arr.sort(() => Math.random() - 0.5);
+    // arr.sort(() => Math.random() - 0.5);
+    let ctr = arr.length;
+    let temp;
+    let index;
+    //while there are elements in the array
+    while (ctr > 0) {
+      //pick a random index
+      index = Math.floor(Math.random() * ctr);
+      //Decrease ctr by 1
+      ctr--;
+      //And swap the last element with it
+      temp = arr[ctr];
+      arr[ctr] = arr[index];
+      arr[index] = temp;
+    }
+    return arr;
   }
   // console.log(category);
   // console.log(questions);
