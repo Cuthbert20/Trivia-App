@@ -68,11 +68,7 @@ function Card(props) {
   return (
     <div className="Card-Container">
       <h3
-        style={
-          props.topic === ""
-            ? { display: "none" }
-            : { display: "flex", alignItems: "center", flexDirection: "column" }
-        }
+        style={props.topic === "" ? { display: "none" } : { display: "block" }}
       >
         You Have Selected <span id="Card-category"> {category}</span>
       </h3>
