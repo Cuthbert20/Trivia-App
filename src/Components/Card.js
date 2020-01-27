@@ -105,6 +105,7 @@ function Card(props) {
               getQuestions={setQuestions}
               answers={answers}
               rightAnswer={rightAnswer}
+              diff={props.diff}
             />
             {/* <button
               value={decodeURIComponent(elm.correct_answer)}

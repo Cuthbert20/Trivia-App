@@ -13,8 +13,8 @@ function Answer(props) {
     );
     props.getQuestions(result.data.results);
   };
-  const handleClick = elm => {
-    if (elm === rightAnswer) {
+  const handleClick = possibleAnswer => {
+    if (possibleAnswer === rightAnswer) {
       Swal.fire("Way to Go!!", "You Answered Correct!", "success");
       topicQuestions();
     } else {
@@ -24,18 +24,18 @@ function Answer(props) {
 
   return (
     <div>
-      {answers.map((elm, index) => {
-        let values = decodeURIComponent(elm);
+      {answers.map((possibleAnswer, index) => {
+        let values = decodeURIComponent(possibleAnswer);
         console.log(values);
         return (
           <div className="Answer-list" key={index}>
-            {/* <li>{decodeURIComponent(elm)}</li> */}
+            {/* <li>{decodeURIComponent(possibleAnswer)}</li> */}
             <button
               className="Answer-btn"
               value={values}
               onClick={() => handleClick(values)}
             >
-              {decodeURIComponent(elm)}
+              {decodeURIComponent(possibleAnswer)}
             </button>
           </div>
         );
