@@ -1,3 +1,8 @@
+# Trivia App
+An trivia game created using the React Library
+
+<img src="demo.gif" width="40%">
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
